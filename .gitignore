@@ -1,23 +1,26 @@
-# Compiled class file
-*.class
+package palinst;
 
-# Log file
-*.log
+import java.util.Scanner;
 
-# BlueJ files
-*.ctxt
+public class palllins {
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+    public static void main(String args[])
+    {
+        String str, rev = "";
+        Scanner sc = new Scanner(System.in);
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
+        System.out.println("Enter a string:");
+        str = sc.nextLine();
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+        int length = str.length();
+
+        for ( int i = length - 1; i >= 0; i-- )
+            rev = rev + str.charAt(i);
+
+        if (str.equals(rev))
+            System.out.println(str+" is a palindrome");
+        else
+            System.out.println(str+" is not a palindrome");
+
+    }
+}
